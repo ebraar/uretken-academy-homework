@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hesap Makinesi</title>
+    <style>
+      input[type="button"] {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="display" disabled /><br /><br />
+
+    <input type="button" value="1" onclick="updateDisplay('1')" />
+    <input type="button" value="2" onclick="updateDisplay('2')" />
+    <input type="button" value="3" onclick="updateDisplay('3')" />
+    <input type="button" value="+" onclick="updateDisplay('+')" /><br />
+
+    <input type="button" value="4" onclick="updateDisplay('4')" />
+    <input type="button" value="5" onclick="updateDisplay('5')" />
+    <input type="button" value="6" onclick="updateDisplay('6')" />
+    <input type="button" value="-" onclick="updateDisplay('-')" /><br />
+
+    <input type="button" value="7" onclick="updateDisplay('7')" />
+    <input type="button" value="8" onclick="updateDisplay('8')" />
+    <input type="button" value="9" onclick="updateDisplay('9')" />
+    <input type="button" value="*" onclick="updateDisplay('*')" /><br />
+
+    <input type="button" value="C" onclick="clearDisplay()" />
+    <input type="button" value="0" onclick="updateDisplay('0')" />
+    <input type="button" value="=" onclick="calculate()" />
+    <input type="button" value="/" onclick="updateDisplay('/')" /><br />
+
+    <script>
+      function updateDisplay(val) {
+        document.getElementById("display").value += val;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+
+      function calculate() {
+        let expression = document.getElementById("display").value;
+        let result = eval(expression);
+        document.getElementById("display").value = result;
+      }
+    </script>
+  </body>
+</html>
